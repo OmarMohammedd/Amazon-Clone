@@ -3,22 +3,9 @@ import Avatar from '@mui/material/Avatar';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { Logincontext } from '../context/Contextprovider';
-// import { makeStyles } from '@material-ui';
 import "./rightheader.css";
 import { Divider } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
-
-
-
-// const usestyle = makeStyles({
-//     component: {
-//         marginTop: 10,
-//         marginRight: "-50px",
-//         width: "300px",
-//         padding: 50,
-//         height: "300px"
-//     },
-// })
 
 
 const Rightheader = ({ logoutuser ,logclose}) => {

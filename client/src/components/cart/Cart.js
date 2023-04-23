@@ -6,6 +6,7 @@ import { Divider } from '@mui/material';
 import { useNavigate , useParams } from 'react-router';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Logincontext } from "../context/Contextprovider";
+import { BASE_URL } from "../../utils/config"
 
 const Cart = () => {
 
@@ -15,7 +16,7 @@ const Cart = () => {
     const [inddata, setIndedata] = useState("");
 
     const getinddata = async () => {
-        const res = await fetch(`/getproductsone/${id}`, {
+        const res = await fetch(`${BASE_URL}/getproductsone/${id}`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -67,10 +68,6 @@ const Cart = () => {
         }
     }
 
-  //   const login = () => {
-  //       history("/login");
-  //     }
-  // }
 
     return (
 

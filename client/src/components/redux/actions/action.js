@@ -1,7 +1,9 @@
+import { BASE_URL } from "../../../utils/config"
+
 
 export const getProducts = ()=> async(dispatch)=>{
     try {
-        const data = await fetch("https://amazon-clone-nusi.onrender.com/getproducts",{
+        const data = await fetch(`${BASE_URL}/getproducts`,{
                 method:"GET",
                 headers:{
                     "Content-Type":"application/json"

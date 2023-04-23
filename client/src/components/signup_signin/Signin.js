@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-// import { Logincontext } from '../context/Contextprovider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Logincontext } from '../context/Contextprovider';
+import { BASE_URL } from "../../utils/config"
 
 
 
@@ -31,7 +31,7 @@ const Sign_in = () => {
 
         const { email, password } = logdata;
         // try {
-            const res = await fetch("/login", {
+            const res = await fetch(`${BASE_URL}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -49,7 +49,7 @@ const Sign_in = () => {
                     position: "top-center",
                 });
             } else {
-                // setData({ ...logdata, email: "", password: "" })
+                
                 setAccount(data)
                 toast.success("Login Successfully done 😃!", {
                     position: "top-center"

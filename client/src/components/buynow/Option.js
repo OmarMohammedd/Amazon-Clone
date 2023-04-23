@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { useContext } from "react";
+import { BASE_URL } from '../../utils/config';
 
 
 const Option = ({deletedata,get}) => {
@@ -11,7 +12,7 @@ const Option = ({deletedata,get}) => {
 
     const removedata = async (id) => {
         try {
-            const res = await fetch(`remove/${id}`, {
+            const res = await fetch(`${BASE_URL}/remove/${id}`, {
                 method: "GET",
                 headers: {
                     Accept: "application/json",

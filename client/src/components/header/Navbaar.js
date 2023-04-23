@@ -17,6 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {useSelector} from "react-redux";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import { BASE_URL } from "../../utils/config"
 
 
 
@@ -36,7 +37,7 @@ const Navbaar = () => {
 
 
   const getdetailsvaliduser = async () => {
-    const res = await fetch("/validuser", {
+    const res = await fetch(`${BASE_URL}/validuser`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -61,12 +62,11 @@ const Navbaar = () => {
 
 
                         // for logout
-  //const [open, setOpen] = useState(false);
   // @ts-ignore
   const history = useNavigate("");
 
     const logoutuser = async () => {
-        const res2 = await fetch("/logout", {
+        const res2 = await fetch(`${BASE_URL}/logout`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -75,7 +75,6 @@ const Navbaar = () => {
             credentials: "include"
         });
 
-        // const data2 = await res2.json();
 
         // @ts-ignore
         if (!res2.status === 201) {
@@ -87,7 +86,6 @@ const Navbaar = () => {
                 position: "top-center"
             });
             history("/");
-            // setOpen(false)
             setAccount(false);
         }
     }
@@ -152,7 +150,7 @@ const { products } = useSelector(state => state.getproductsdata);
           // @ts-ignore
           products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product => (
               <ListItem>
-                  <NavLink to={`/getproductsone/${product.id}`} onClick={() => setLiopen(true)}>
+                  <NavLink to={`${BASE_URL}/getproductsone/${product.id}`} onClick={() => setLiopen(true)}>
                       {product.title.longTitle}
                   </NavLink>
               </ListItem>

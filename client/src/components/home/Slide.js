@@ -3,8 +3,8 @@ import "./slide.css";
 import Carousel from "react-multi-carousel";
 import { Divider } from '@mui/material';
 import "react-multi-carousel/lib/styles.css";
-// import { products } from './productdata';
 import { NavLink } from "react-router-dom";
+import { BASE_URL } from "../../utils/config"
 
 
 const responsive = {
@@ -51,7 +51,7 @@ const Slide = ({title, products}) => {
       {
       products.map((e) => {
           return (
-          <NavLink to={`/getproductsone/${e.id}`}>
+          <NavLink to={`${BASE_URL}/getproductsone/${e.id}`}>
             <div className="products_items">
                 <div className="product_img">
                     <img src={e.url} alt="product" />

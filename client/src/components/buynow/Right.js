@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from 'react'
-// import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-// import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-// import { useNavigate } from 'react-router';
 
 const Right = ({ iteam }) => {
 
-    // console.log(iteam);
-    // const [val, setVal] = useState(false);
 
     const [price, setPrice] = useState(0);
 
-    // const history = useNavigate("");
 
     useEffect(() => {
         totalAmount();
@@ -26,10 +20,7 @@ const Right = ({ iteam }) => {
         setPrice(price)
     }
 
-    // const proceesby = ()=>{
-    //     alert("Your Order is Confirmed");
-    //     history("/");
-    // }
+
 
     return (
       <div className="right_buy">
